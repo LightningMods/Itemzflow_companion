@@ -1,0 +1,51 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:ProgressBar="clr-namespace:Xamarin.Forms;assembly=Xamarin.Forms.ProgressBar"
+             x:Class="itemzflow_companion.Views.InstallerPage"
+             xmlns:activityIndicator="clr-namespace:Xamarin.Forms.ActivityIndicator"
+             xmlns:vm="clr-namespace:itemzflow_companion.ViewModels"
+             Title="{Binding Title}">
+    
+    <ContentPage.BindingContext>
+        <vm:InstallerViewModel />
+    </ContentPage.BindingContext>
+    
+    <ContentPage.Resources>
+        <ResourceDictionary>
+            <Color x:Key="Accent">#96d1ff</Color>
+        </ResourceDictionary>
+    </ContentPage.Resources>
+
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto" />
+            <RowDefinition Height="*" />
+        </Grid.RowDefinitions>
+        <ScrollView Grid.Row="0">
+
+            <StackLayout Orientation="Vertical" Padding="30,30,30,30" Spacing="10">
+                <Label Text="PS4 Package Installer"  Grid.Row="2" Grid.Column="1" HorizontalOptions="Center"  VerticalOptions="Center" FontSize="30" TextColor="#525252"/>
+                <Label x:Name="tes" Grid.Row="2" Grid.Column="1" FontAttributes="Bold" HorizontalOptions="Center"  VerticalOptions="Center" FontSize="17" TextColor="#525252"/>
+                    <Button Margin="0,10,0,0" Text="Select a Package" Clicked="OpenFileSelector" />
+                <Label Text="Enter your PS4's IP address below" TextColor="#525252" />
+                <Entry x:Name="IP_Addr" Text="IP Address Here" TextColor="#525252" />
+                    <Label FontSize="16" Padding="0,24,0,0">
+                    <Label.FormattedText>
+                        <FormattedString>
+                            <FormattedString.Spans>
+                                <Span Text="Note" FontAttributes="Bold" TextColor="#525252" />
+                                <Span Text=": Itemzflow/Itemz-Daemon must be running!" TextColor="#525252" />
+                            </FormattedString.Spans>
+                        </FormattedString>
+                    </Label.FormattedText>
+                </Label>
+                <Button x:Name="UploadButton" Margin="0,10,0,0" Text="Upload for Install" Clicked="OpenFTPUpload" IsEnabled="false" />
+                <Label x:Name="UpText" Grid.Row="2" Grid.Column="1"  HorizontalOptions="Center"  VerticalOptions="Center" FontSize="17" TextColor="#525252"/>
+                <ProgressBar x:Name="progressBar" VerticalOptions="Center" HorizontalOptions="FillAndExpand" IsVisible="false"/>
+                <ActivityIndicator x:Name="ai" IsRunning="false" IsVisible="True"  Color="Blue" />
+            </StackLayout>
+        </ScrollView>
+    </Grid>
+
+</ContentPage>
