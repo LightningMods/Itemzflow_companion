@@ -1,0 +1,34 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:ProgressBar="clr-namespace:Xamarin.Forms;assembly=Xamarin.Forms.ProgressBar"
+             x:Class="itemzflow_companion.Views.sys_controlsPage"
+             xmlns:activityIndicator="clr-namespace:Xamarin.Forms.ActivityIndicator"
+             xmlns:vm="clr-namespace:itemzflow_companion.ViewModels"
+             Title="{Binding Title}">
+    
+    <ContentPage.BindingContext>
+        <vm:Sys_ControlsViewModel />
+    </ContentPage.BindingContext>
+    
+    <ContentPage.Resources>
+        <ResourceDictionary>
+            <Color x:Key="Accent">#96d1ff</Color>
+        </ResourceDictionary>
+    </ContentPage.Resources>
+
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto" />
+            <RowDefinition Height="*" />
+        </Grid.RowDefinitions>
+        <ScrollView Grid.Row="0">
+
+            <StackLayout Orientation="Vertical" Padding="30,30,30,30" Spacing="40">
+                <Label Text="Coming Soon!"  Grid.Row="2" Grid.Column="1" HorizontalOptions="Center"  VerticalOptions="Center" FontSize="30" TextColor="#525252"/>
+                <Label Text="Be sure to check out our Discord or Ko-fi on the about page"  Grid.Row="2" Grid.Column="1" HorizontalOptions="Center"  VerticalOptions="Center" FontSize="20" TextColor="#525252"/>
+            </StackLayout>
+        </ScrollView>
+    </Grid>
+
+</ContentPage>

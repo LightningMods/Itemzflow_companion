@@ -13,7 +13,7 @@ namespace itemzflow_companion
             InitializeComponent();
         }
 
-        private async void OnMenuItemClicked(object sender, EventArgs e)
+        private void OnMenuItemClicked(object sender, EventArgs e)
         {
             
         }
